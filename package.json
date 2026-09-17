@@ -1,0 +1,37 @@
+{
+  "name": "io.github.michael32034.colnet",
+  "displayName": "Colnet",
+  "version": "1.0.0",
+  "description": "College Web Diary Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cordova build browser",
+    "build_dev": "DEBUG=true cordova build browser",
+    "bootstrap": "cp node_modules/bootstrap/dist/css/bootstrap.min.css www/css/bootstrap.min.css && cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js www/js/bootstrap.bundle.min.js",
+    "compile": "cordova build android",
+    "publication": "./script/publication.bash",
+    "run_local": "DEBUG=true cordova run browser"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Michael32034",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^14.0.1",
+    "cordova-browser": "^7.0.0",
+    "cordova-serve": "^4.0.1",
+    "esbuild": "^0.27.2"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "pathcat": "^1.5.1",
+    "ts-safe-enum": "^2.0.0"
+  }
+}

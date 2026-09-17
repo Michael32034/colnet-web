@@ -1,0 +1,15 @@
+#registration {
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+#reg_settings {
+  display: none;
+}
+
+#reg_cohourt {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+} 
+

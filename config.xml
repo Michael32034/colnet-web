@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.github.colnet" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Colnet</name>
+    <description>College Distributed Network Project</description>
+    <author email="misa32034@gmail.com" href="https://github.com/Michael32034">
+        Michael32034
+    </author>
+    <content src="index.html" />
+    <allow-intent href="https://*/*" />
+    <hook type="before_prepare" src="script/build.js" />
+</widget>
