@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "cordova platform add browser",
+    "add:browser: "cordova platform add browser",
     "build": "cordova build browser",
     "build_dev": "DEBUG=true cordova build browser",
     "bootstrap": "cp node_modules/bootstrap/dist/css/bootstrap.min.css www/css/bootstrap.min.css && cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js www/js/bootstrap.bundle.min.js",
