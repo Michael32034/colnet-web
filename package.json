@@ -19,6 +19,7 @@
   "author": "Michael32034",
   "license": "Apache-2.0",
   "devDependencies": {
+    "cordova": "^13.0.0",
     "cordova-android": "^14.0.1",
     "cordova-browser": "^7.0.0",
     "cordova-serve": "^4.0.1",
