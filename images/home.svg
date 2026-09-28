@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="home.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:zoom="11.21"
+     inkscape:cx="27.921499"
+     inkscape:cy="24.843889"
+     inkscape:window-width="1670"
+     inkscape:window-height="980"
+     inkscape:window-x="5"
+     inkscape:window-y="37"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3">
+    <sodipodi:guide
+       position="17.841213,15.678355"
+       orientation="1,0"
+       id="guide2"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="30.062444,37.629379"
+       orientation="1,0"
+       id="guide3"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3"
+       transform="translate(0,-2.7028206)">
+      <path
+         id="rect1"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-dasharray:none"
+         d="M 9.8176336,22.311671 V 42.33162 H 17.841213 V 32.321645 l 12.221231,-0.08921 V 42.24241 l 8.119922,0.08921 V 22.311671 Z"
+         sodipodi:nodetypes="ccccccccc" />
+      <path
+         id="path2"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:6.6;stroke-dasharray:none"
+         inkscape:transform-center-y="-1.878457"
+         d="M 42.313672,22.311671 H 5.6863279 L 23.999999,11.040934 Z" />
+    </g>
+  </g>
+</svg>

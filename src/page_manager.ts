@@ -148,13 +148,15 @@ class PageManager {
     let subject_link = document.getElementById(
       "settings_subject_link",
     ) as HTMLDivElement;
+    subject_link.replaceChildren();
     let already = subject_link.getElementsByTagName("div");
     while (already.length > 0) {
       already[0].remove();
     }
     let i = 0;
     for (const subject of settings.group.subjects) {
-      let subject_select_cont = document.createElement("div");
+      let subject_select_cont = document.createElement("li");
+      subject_select_cont.classList.add("settings-item");
       let subject_select_label = document.createElement("label");
       subject_select_label.innerText = subject;
       let subject_select = document.createElement("select");

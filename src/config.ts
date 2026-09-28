@@ -10,7 +10,7 @@ const config = {
     settings: "#settings",
     schedule: "#schedule",
     home: "#home",
-    notes: "#notes",
+    replacements: "#replacements",
     news: "#news",
   }),
 };

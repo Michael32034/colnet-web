@@ -35,24 +35,25 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="icon" href="./img/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="./img/icon.svg" sizes="any" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" sizes="48x48" />
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="module" charset="utf-8" src="js/bundle.js"></script>
     <script type="module" charset="utf-8" src="js/bootstrap.bundle.min.js"></script>
-    <title>Hello World</title>
+    <title>Colnet</title>
 </head>
 
-<body class="bg-success-subtle">
+<body class="bg-clr-3">
     <main id="app">
         <article id="settings" class="page">
-            <nav class="nav justify-content-end bg-secondary-subtle p-2">
+            <nav class="nav justify-content-between align-items-center bg-secondary-subtle p-2">
+                <h3 class="mb-0 ms-3">Загальні налаштування</h3>
                 <button id="settings_form_submit" type="submit" form="settings_form" class="btn btn-outline-success"
                     disabled>
                     Зберегти
                 </button>
             </nav>
             <form id="settings_form" class="m-4">
-                <h4>Загальні налаштування</h4>
                 <ul class="list-unstyled">
                     <li>
                         <div class="form-switch">
@@ -63,7 +64,7 @@
                     </li>
                     <li></li>
                 </ul>
-                <h5>Налаштування вмісту</h5>
+                <h4>Налаштування вмісту</h4>
                 <ul id="settings_subject_link" class="list-unstyled"></ul>
             </form>
         </article>
@@ -212,34 +213,34 @@
             </div>
         </article>
         <article id="home" class="page">
-            <h3 class="text-center">Home</h3>
-            <div class="card m-2">
-                <div class="card-body d-inline-flex justify-content-between">
-                    <span id="date">12.01</span>
-                    <span id="dayofweek">Четверг</span>
+            <h1 class="text-center">Home</h1>
+            <div class="card m-2 card-bg-clr-4">
+                <div class="card-body d-inline-flex justify-content-between bg-clr-4">
+                    <span id="date" class="text-1">12.01</span>
+                    <span id="dayofweek" class="text-1">Четверг</span>
                 </div>
             </div>
-            <div id="next_lesson" class="card m-2">
+            <div id="next_lesson" class="card m-2 card-bg-clr-4">
                 <div class="card-body">
                     <h5 id="next_lesson_title" class="card-title">
                         Наступна пара: Веб-технології
                     </h5>
-                    <h6 id="next_lesson_start" class="card-subtitle mb-2 text-body-secondary">
+                    <h6 id="next_lesson_start" class="card-subtitle mb-2 text-body-secondary text-1">
                         Початок: 12:00
                     </h6>
                     <!-- <p id="next_lesson_message" style="display: none"></p> -->
-                    <a id="next_lesson_link" href="#" class="card-link">Посилання на урок</a>
-                    <a href="https://htcolledge.sumdu.edu.ua/dystantsiyne-navchannia/" class="card-link">
+                    <a id="next_lesson_link" href="#" class="card-link text-1">Посилання на урок</a>
+                    <a href="https://htcolledge.sumdu.edu.ua/dystantsiyne-navchannia/" class="card-link text-1">
                         Офіційний сайт
                     </a>
                 </div>
             </div>
         </article>
-        <article id="notes" class="page">
-            <textarea class="border-0 w-100 h-100"></textarea>
+        <article id="replacements" class="page">
+            <p class="p-2">Заміни відсутні(можливо)</p>
         </article>
         <article id="news" class="page">
-            <div class="card m-2">
+            <div class="card m-2 card-bg-clr-4">
                 <div class="card-body">
                     <h5 class="card-title">Вітаю в Colnet</h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">
@@ -253,7 +254,7 @@
             </div>
         </article>
         <dialog id="registration" class="position-fixed bg-transparent z-3 w-auto h-100 border-0 p-2">
-            <div class="p-3 rounded-4 bg-dark h-100 w-100">
+            <div class="p-3 rounded-4 card-bg-clr-4 h-100 w-100">
                 <h3 class="text-center">Налаштування</h3>
                 <p class="text-secondary">
                     Налаштуйте деякі моменти для правильної роботи сайту
@@ -271,14 +272,23 @@
             </div>
         </dialog>
     </main>
-    <nav
-        class="z-2 fixed-bottom d-inline-flex bg-primary-subtle p-3 rounded-top-5 border-top border-start border-end border-dark">
-        <ul class="list-unstyled justify-content-evenly d-inline-flex gap-1 w-100">
-            <li><a href="#settings">Settings</a></li>
-            <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#notes">Notes</a></li>
-            <li><a href="#news">News</a></li>
+    <nav id="navbar">
+        <ul class="list-unstyled m-2">
+            <li>
+                <a href="#settings"><img src="./img/settings.svg" alt="" /></a>
+            </li>
+            <li>
+                <a href="#schedule"><img src="./img/schedule.svg" alt="Розклад" /></a>
+            </li>
+            <li>
+                <a href="#home"><img src="./img/home.svg" alt="Домашня сторінка" /></a>
+            </li>
+            <li>
+                <a href="#replacements"><img src="./img/replacements.svg" alt="Заміни" /></a>
+            </li>
+            <li>
+                <a href="#news"><img src="./img/news.svg" alt="Новини" /></a>
+            </li>
         </ul>
     </nav>
 </body>

@@ -19,6 +19,15 @@
 
 @import "registration.css";
 
+:root {
+  --clr-1: #006d77;
+  --clr-2: #83c5be;
+  --clr-3: #edf6f9;
+  --clr-4: #ffddd2;
+  --clr-5: #e29578;
+  --br-std: 1px solid black;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -34,4 +43,89 @@
   position: absolute;
   transform-origin: 0 0;
   transform: rotate(-90deg);
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-clr-1 {
+  background-color: var(--clr-1);
+}
+
+.bg-clr-2 {
+  background-color: var(--clr-2);
+}
+
+.bg-clr-3 {
+  background-color: var(--clr-3);
+}
+
+.bg-clr-4 {
+  background-color: var(--clr-4);
+}
+
+.bg-clr-5 {
+  background-color: var(--clr-5);
+}
+
+.card-bg-clr-4 {
+  --bs-card-bg: var(--clr-4) !important;
+}
+
+#navbar {
+  background-color: var(--clr-2);
+  border-radius: 2rem 2rem 0px 0px;
+  border-top: var(--br-std);
+  border-right: var(--br-std);
+  border-left: var(--br-std);
+  display: inline-flex;
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#navbar>ul {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+@media (min-width: 678px) {
+
+  span,
+  a,
+  p,
+  label,
+  input {
+    font-size: 1.2rem;
+  }
+
+  .page {
+    margin-left: 4rem;
+  }
+
+  #navbar {
+    border-radius: 0px 0px 0px 0px;
+    border-top: none;
+    border-right: none;
+    border-left: var(--br-std);
+    top: 0;
+    right: auto;
+  }
+
+  #navbar>ul {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: start;
+  }
+
+  #settings_subject_link {
+    width: 75%;
+  }
 }
