@@ -18,6 +18,8 @@
  */
 import { PAGES, STORAGE_ITEMS } from "./config";
 import PageManager from "./page_manager";
+import changedSettingsPage from "./pages/settings/changedSettingsPage";
+import submitSettingsPage from "./pages/settings/submitSettingsPage";
 import { registration, submit_form } from "./registration";
 
 function hasSettings(): Boolean {
@@ -53,11 +55,11 @@ document.addEventListener("DOMContentLoaded", onstart);
 );
 
 document.querySelectorAll(".settings").forEach((element) => {
-  element.addEventListener("change", PageManager.changedSettingsPage);
+  element.addEventListener("change", changedSettingsPage);
 });
 
 document
   .getElementById("settings_form")!
-  .addEventListener("submit", PageManager.submitSettingsPage);
+  .addEventListener("submit", submitSettingsPage);
 
 window.onhashchange = onHashChanged;

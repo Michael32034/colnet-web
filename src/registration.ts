@@ -5,6 +5,15 @@ import { Group, Settings, SubjectLinks } from "./data.ts";
 
 async function fill_group_option() {
   let groups = (await Api.get_groups_list()) as Array<Group>;
+  groups.sort((a, b) => {
+    let pa = a.name.match(/^([^\d]+)-(\d+)/)!;
+    let pb = b.name.match(/^([^\d]+)-(\d+)/)!;
+
+    if (pa[2] !== pb[2]) {
+      return Number(pb[2]) - Number(pa[2]);
+    }
+    return a.name.localeCompare(b.name);
+  });
   let group_select = document.getElementById(
     "group_select",
   ) as HTMLSelectElement;
@@ -18,6 +27,17 @@ async function fill_group_option() {
 
 async function group_subject_links_choose(e: Event) {
   let groups = (await Api.get_groups_list()) as Array<Group>;
+  groups.sort((a, b) => {
+    let pa = a.name.match(/^([^\d]+)-(\d+)/)!;
+    let pb = b.name.match(/^([^\d]+)-(\d+)/)!;
+
+    if (pa[2] !== pb[2]) {
+      return Number(pb[2]) - Number(pa[2]);
+    }
+    return a.name.localeCompare(b.name);
+  });
+  console.log(groups);
+
   let subject_link = document.getElementById("subject_link") as HTMLDivElement;
   for (const group of groups) {
     if (e.target) {

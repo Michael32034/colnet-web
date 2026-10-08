@@ -1,6 +1,6 @@
 import { pathcat } from "pathcat";
 import { API } from "./config";
-import { Group, Schedule, CallSchedule } from "./data";
+import { Group, Schedule, CallSchedule, Replacement } from "./data";
 
 class Api {
   static async get_groups_list(): Promise<Array<Group>> {
@@ -11,25 +11,25 @@ class Api {
     return await (await fetch(pathcat(API, "/call_schedule"))).json();
   }
 
-  static async get_group_by_id(id: number): Promise<Group> {
-    return await (
-      await fetch(pathcat(API, "/group/by_id/:id", { id: id }))
-    ).json();
-  }
-
   static async get_group_by_name(name: string): Promise<Group> {
     return await (
       await fetch(pathcat(API, "/group/by_name/:name", { name: name }))
     ).json();
   }
-  static async get_group_schedule_by_id(id: number): Promise<Schedule> {
-    return await (
-      await fetch(pathcat(API, "/group/schedule/by_id/:id", { id: id }))
-    ).json();
-  }
+
   static async get_group_schedule_by_name(name: string): Promise<Schedule> {
     return await (
       await fetch(pathcat(API, "/group/schedule/by_name/:name", { name: name }))
+    ).json();
+  }
+
+  static async get_group_replacement_by_name(
+    name: string,
+  ): Promise<Array<Replacement>> {
+    return await (
+      await fetch(
+        pathcat(API, "/group/replacement/by_name/:name", { name: name }),
+      )
     ).json();
   }
 }

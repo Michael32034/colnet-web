@@ -1,7 +1,7 @@
 {
   "name": "io.github.michael32034.colnet",
   "displayName": "Colnet",
-  "version": "1.0.0",
+  "version": "0.6-alpha",
   "description": "College Web Diary Project",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,7 @@
     ]
   },
   "dependencies": {
+    "htm": "^3.1.1",
     "pathcat": "^1.5.1",
     "ts-safe-enum": "^2.0.0"
   }

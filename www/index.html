@@ -33,20 +33,18 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="icon" type="image/svg+xml" href="./img/icon.svg" sizes="any" />
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico" sizes="48x48" />
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="module" charset="utf-8" src="js/bundle.js"></script>
-    <script type="module" charset="utf-8" src="js/bootstrap.bundle.min.js"></script>
     <title>Colnet</title>
 </head>
 
 <body class="bg-clr-3">
     <main id="app">
         <article id="settings" class="page">
-            <nav class="nav justify-content-between align-items-center bg-secondary-subtle p-2">
+            <nav class="nav justify-content-between align-items-center bg-secondary-subtle p-2 bg-clr-5">
                 <h3 class="mb-0 ms-3">Загальні налаштування</h3>
                 <button id="settings_form_submit" type="submit" form="settings_form" class="btn btn-outline-success"
                     disabled>
@@ -54,16 +52,16 @@
                 </button>
             </nav>
             <form id="settings_form" class="m-4">
-                <ul class="list-unstyled">
-                    <li>
-                        <div class="form-switch">
-                            <input id="dark_theme" type="checkbox" role="switch" name="dark_theme"
-                                class="form-check-input settings" />
-                            <label for="dark_theme">Темна тема</label>
-                        </div>
-                    </li>
-                    <li></li>
-                </ul>
+                <!-- <ul class="list-unstyled"> -->
+                <!--     <li> -->
+                <!--         <div class="form-switch"> -->
+                <!--             <input id="dark_theme" type="checkbox" role="switch" name="dark_theme" -->
+                <!--                 class="form-check-input settings" /> -->
+                <!--             <label for="dark_theme">Темна тема</label> -->
+                <!--         </div> -->
+                <!--     </li> -->
+                <!--     <li></li> -->
+                <!-- </ul> -->
                 <h4>Налаштування вмісту</h4>
                 <ul id="settings_subject_link" class="list-unstyled"></ul>
             </form>
@@ -222,23 +220,21 @@
             </div>
             <div id="next_lesson" class="card m-2 card-bg-clr-4">
                 <div class="card-body">
-                    <h5 id="next_lesson_title" class="card-title">
-                        Наступна пара: Веб-технології
+                    <h5 id="next_lesson_title" class="card-title placeholder-glow">
+                        Наступна пара: <span class="placeholder col-4"></span>
                     </h5>
                     <h6 id="next_lesson_start" class="card-subtitle mb-2 text-body-secondary text-1">
-                        Початок: 12:00
+                        Початок: <span class="placeholder col-1"></span>
                     </h6>
                     <!-- <p id="next_lesson_message" style="display: none"></p> -->
-                    <a id="next_lesson_link" href="#" class="card-link text-1">Посилання на урок</a>
+                    <a id="next_lesson_link" href="#" class="card-link text-1 disabled">Посилання на урок</a>
                     <a href="https://htcolledge.sumdu.edu.ua/dystantsiyne-navchannia/" class="card-link text-1">
                         Офіційний сайт
                     </a>
                 </div>
             </div>
         </article>
-        <article id="replacements" class="page">
-            <p class="p-2">Заміни відсутні(можливо)</p>
-        </article>
+        <article id="replacements" class="page"></article>
         <article id="news" class="page">
             <div class="card m-2 card-bg-clr-4">
                 <div class="card-body">
@@ -253,8 +249,8 @@
                 </div>
             </div>
         </article>
-        <dialog id="registration" class="position-fixed bg-transparent z-3 w-auto h-100 border-0 p-2">
-            <div class="p-3 rounded-4 card-bg-clr-4 h-100 w-100">
+        <dialog id="registration" class="position-fixed bg-transparent glass z-3 w-auto h-100 border-0 p-2">
+            <div class="border border-2 p-3 rounded-4 bg-clr-5 bd-clr-1 h-100 w-100">
                 <h3 class="text-center">Налаштування</h3>
                 <p class="text-secondary">
                     Налаштуйте деякі моменти для правильної роботи сайту
@@ -275,19 +271,19 @@
     <nav id="navbar">
         <ul class="list-unstyled m-2">
             <li>
-                <a href="#settings"><img src="./img/settings.svg" alt="" /></a>
+                <a id="settings_link" href="#settings"><img src="./img/settings.svg" alt="Налаштування" /></a>
             </li>
             <li>
-                <a href="#schedule"><img src="./img/schedule.svg" alt="Розклад" /></a>
+                <a id="schedule_link" href="#schedule"><img src="./img/schedule.svg" alt="Розклад" /></a>
             </li>
             <li>
-                <a href="#home"><img src="./img/home.svg" alt="Домашня сторінка" /></a>
+                <a id="home_link" href="#home"><img src="./img/home.svg" alt="Домашня сторінка" /></a>
             </li>
             <li>
-                <a href="#replacements"><img src="./img/replacements.svg" alt="Заміни" /></a>
+                <a id="replacements_link" href="#replacements"><img src="./img/replacements.svg" alt="Заміни" /></a>
             </li>
             <li>
-                <a href="#news"><img src="./img/news.svg" alt="Новини" /></a>
+                <a id="news_link" href="#news"><img src="./img/news.svg" alt="Новини" /></a>
             </li>
         </ul>
     </nav>

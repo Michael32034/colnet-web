@@ -25,6 +25,19 @@ type Schedule = Record<string, Array<string>>;
 
 type CallSchedule = Array<{ start: string; stop: string }>;
 
+type Subject = {
+  name: string;
+  teacher: string;
+};
+
+type Replacement = {
+  group_name: string;
+  date: `${number}-${number}-${number}`;
+  lessons: string;
+  audience: string;
+  content: string | { old: Subject; new: Subject };
+};
+
 type Apperance = {
   theme: string | null;
 };
@@ -39,9 +52,11 @@ export {
   DAYSOFWEEK,
   Group,
   Settings,
+  Subject,
   SubjectLinks,
   Schedule,
   CallSchedule,
+  Replacement,
   Apperance,
   DayOfWeek,
 };
