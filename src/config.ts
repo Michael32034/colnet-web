@@ -1,7 +1,7 @@
 import { defineEnum } from "ts-safe-enum";
 
 const config = {
-  API: "http://colnet-api.fastapicloud.dev/",
+  API: "https://colnet-api.fastapicloud.dev/",
   STORAGE_ITEMS: {
     OpenedPage: "openedPage",
     Settings: "settings",
