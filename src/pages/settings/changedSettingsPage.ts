@@ -1,10 +1,10 @@
 async function changedSettingsPage() {
-    let settings_form_submit = document.getElementById(
-        "settings_form_submit",
+    let settingsFormSubmit = document.getElementById(
+        "settingsFormSubmit",
     ) as HTMLButtonElement;
-    settings_form_submit.classList.add("btn-success");
-    settings_form_submit.classList.remove("btn-outline-success");
-    settings_form_submit.disabled = false;
+    settingsFormSubmit.classList.add("btn-success");
+    settingsFormSubmit.classList.remove("btn-outline-success");
+    settingsFormSubmit.disabled = false;
 }
 
 export default changedSettingsPage;

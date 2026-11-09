@@ -1,10 +1,10 @@
 import config from "./config.ts";
 import Api from "./api.ts";
-import PageManager from "./page_manager.ts";
+import PageManager from "./pageManager.ts";
 import { Group, Settings, SubjectLinks } from "./data.ts";
 
-async function fill_group_option() {
-  let groups = (await Api.get_groups_list()) as Array<Group>;
+async function fillGroupOption() {
+  let groups = (await Api.getGroupsList()) as Array<Group>;
   groups.sort((a, b) => {
     let pa = a.name.match(/^([^\d]+)-(\d+)/)!;
     let pb = b.name.match(/^([^\d]+)-(\d+)/)!;
@@ -22,11 +22,11 @@ async function fill_group_option() {
     option.textContent = group["name"];
     group_select.appendChild(option);
   }
-  group_select.addEventListener("change", group_subject_links_choose);
+  group_select.addEventListener("change", groupSubjectLinksChoose);
 }
 
-async function group_subject_links_choose(e: Event) {
-  let groups = (await Api.get_groups_list()) as Array<Group>;
+async function groupSubjectLinksChoose(e: Event) {
+  let groups = (await Api.getGroupsList()) as Array<Group>;
   groups.sort((a, b) => {
     let pa = a.name.match(/^([^\d]+)-(\d+)/)!;
     let pb = b.name.match(/^([^\d]+)-(\d+)/)!;
@@ -38,12 +38,12 @@ async function group_subject_links_choose(e: Event) {
   });
   console.log(groups);
 
-  let subject_link = document.getElementById("subject_link") as HTMLDivElement;
+  let subjectLink = document.getElementById("subject_link") as HTMLDivElement;
   for (const group of groups) {
     if (e.target) {
       if (group.name === (e.target as HTMLSelectElement).value) {
         let choosed_group = group;
-        let already = subject_link.getElementsByTagName("div");
+        let already = subjectLink.getElementsByTagName("div");
         while (already.length > 0) {
           already[0].remove();
         }
@@ -61,37 +61,37 @@ async function group_subject_links_choose(e: Event) {
           }
           subject_select_cont.appendChild(subject_select_label);
           subject_select_cont.appendChild(subject_select);
-          subject_link.appendChild(subject_select_cont);
+          subjectLink.appendChild(subject_select_cont);
           i += 1;
         }
       }
     }
   }
-  let ready_button = document.getElementById("set_ready") as HTMLInputElement;
-  ready_button!.disabled = false;
+  let readyButton = document.getElementById("set_ready") as HTMLInputElement;
+  readyButton!.disabled = false;
 }
 
-async function submit_form(e: SubmitEvent) {
+async function submitForm(e: SubmitEvent) {
   e.preventDefault();
   let settingsDialog = document.getElementById(
     "registration",
   ) as HTMLDialogElement;
   settingsDialog!.close();
-  let formdata = new FormData(e.target! as HTMLFormElement);
-  let group = await Api.get_group_by_name(formdata.get("group") as string);
-  let subject_links: SubjectLinks = {};
-  for (const group_subject of group.subjects) {
-    if (group_subject) {
-      subject_links[group_subject] =
-        (formdata.get(
-          `subject${group.subjects.indexOf(group_subject)}`,
+  let formData = new FormData(e.target! as HTMLFormElement);
+  let group = await Api.getGroupByName(formData.get("group") as string);
+  let subjectLinks: SubjectLinks = {};
+  for (const groupSubject of group.subjects) {
+    if (groupSubject) {
+      subjectLinks[groupSubject] =
+        (formData.get(
+          `subject${group.subjects.indexOf(groupSubject)}`,
         ) as string) ?? "";
     }
   }
   let settings: Settings = {
     group: group,
-    subject_links: subject_links,
-    apperance: { theme: null },
+    subject_links: subjectLinks,
+    apperance: { theme: "auto" },
   };
   localStorage.setItem(config.STORAGE_ITEMS.Settings, JSON.stringify(settings));
   PageManager.showPage(config.PAGES.home);
@@ -102,7 +102,7 @@ async function registration() {
     "registration",
   ) as HTMLDialogElement;
   settingsDialog!.show();
-  await fill_group_option();
+  await fillGroupOption();
 }
 
-export { registration, submit_form };
+export { registration, submitForm };

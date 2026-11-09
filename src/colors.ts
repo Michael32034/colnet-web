@@ -1,1 +1,0 @@
-//NOTE: Add colorscheme managment

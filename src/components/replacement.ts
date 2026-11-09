@@ -4,10 +4,8 @@ import { Replacement } from "../data";
 const ReplacementComponent = (replacement: Replacement) => {
   let message;
   if (typeof replacement.content == "string") {
-    console.log(88);
     message = html` <p>${replacement.content}</p> `;
   } else {
-    console.log(57);
     message = html`
       <p class="w-100">1: ${replacement.content.old.name}</p>
       <p class="w-100">2: ${replacement.content.new.name}</p>

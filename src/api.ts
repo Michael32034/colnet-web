@@ -3,27 +3,27 @@ import { API } from "./config";
 import { Group, Schedule, CallSchedule, Replacement } from "./data";
 
 class Api {
-  static async get_groups_list(): Promise<Array<Group>> {
+  static async getGroupsList(): Promise<Array<Group>> {
     return await (await fetch(pathcat(API, "/groups"))).json();
   }
 
-  static async get_call_schedule(): Promise<CallSchedule> {
+  static async getCallSchedule(): Promise<CallSchedule> {
     return await (await fetch(pathcat(API, "/call_schedule"))).json();
   }
 
-  static async get_group_by_name(name: string): Promise<Group> {
+  static async getGroupByName(name: string): Promise<Group> {
     return await (
       await fetch(pathcat(API, "/group/by_name/:name", { name: name }))
     ).json();
   }
 
-  static async get_group_schedule_by_name(name: string): Promise<Schedule> {
+  static async getGroupScheduleByName(name: string): Promise<Schedule> {
     return await (
       await fetch(pathcat(API, "/group/schedule/by_name/:name", { name: name }))
     ).json();
   }
 
-  static async get_group_replacement_by_name(
+  static async getGroupReplacementByName(
     name: string,
   ): Promise<Array<Replacement>> {
     return await (

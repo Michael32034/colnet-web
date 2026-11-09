@@ -17,10 +17,10 @@
  * under the License.
  */
 import { PAGES, STORAGE_ITEMS } from "./config";
-import PageManager from "./page_manager";
-import changedSettingsPage from "./pages/settings/changedSettingsPage";
-import submitSettingsPage from "./pages/settings/submitSettingsPage";
-import { registration, submit_form } from "./registration";
+import { Settings } from "./data";
+import PageManager from "./pageManager";
+import { registration, submitForm } from "./registration";
+import { updateTheme } from "./utils/colors";
 
 function hasSettings(): Boolean {
   let settings = localStorage.getItem(STORAGE_ITEMS.Settings);
@@ -29,6 +29,10 @@ function hasSettings(): Boolean {
 
 async function onstart() {
   if (hasSettings()) {
+    let settings = JSON.parse(
+      localStorage.getItem(STORAGE_ITEMS.Settings)!,
+    ) as Settings;
+    updateTheme(settings.apperance.theme);
     PageManager.openCashedPage();
   } else {
     await registration();
@@ -51,15 +55,18 @@ document.addEventListener("DOMContentLoaded", onstart);
 
 (document.getElementById("start_settings") as HTMLFormElement).addEventListener(
   "submit",
-  submit_form,
+  submitForm,
 );
 
-document.querySelectorAll(".settings").forEach((element) => {
-  element.addEventListener("change", changedSettingsPage);
+window.onhashchange = onHashChanged;
+
+document.getElementById("cleanData")?.addEventListener("click", () => {
+  for (const [_, value] of Object.entries(STORAGE_ITEMS)) {
+    localStorage.removeItem(value);
+  }
+  window.open(location.origin);
 });
 
-document
-  .getElementById("settings_form")!
-  .addEventListener("submit", submitSettingsPage);
-
-window.onhashchange = onHashChanged;
+screen.orientation.addEventListener("change", () => {
+  location.reload();
+});

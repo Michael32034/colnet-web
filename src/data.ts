@@ -10,7 +10,17 @@ const DAYSOFWEEK = defineEnum({
   sunday: "Неділя",
 });
 
+const WORKDAYS = defineEnum({
+  monday: DAYSOFWEEK.monday,
+  tuesday: DAYSOFWEEK.tuesday,
+  wednesday: DAYSOFWEEK.wednesday,
+  thursday: DAYSOFWEEK.thursday,
+  friday: DAYSOFWEEK.friday,
+});
+
 type DayOfWeek = InferValue<typeof DAYSOFWEEK>;
+
+type Workday = InferValue<typeof WORKDAYS>;
 
 type Group = {
   id: number;
@@ -21,9 +31,11 @@ type Group = {
 
 type SubjectLinks = Record<string, string>;
 
-type Schedule = Record<string, Array<string>>;
+type Schedule = Record<Workday, Array<string>>;
 
-type CallSchedule = Array<{ start: string; stop: string }>;
+type CallSchedule = Array<{ start: string; end: string }>;
+
+type Theme = "auto" | "dark" | "light";
 
 type Subject = {
   name: string;
@@ -39,7 +51,7 @@ type Replacement = {
 };
 
 type Apperance = {
-  theme: string | null;
+  theme: Theme;
 };
 
 type Settings = {
@@ -50,13 +62,16 @@ type Settings = {
 
 export {
   DAYSOFWEEK,
+  WORKDAYS,
+  DayOfWeek,
+  Workday,
   Group,
   Settings,
   Subject,
   SubjectLinks,
   Schedule,
   CallSchedule,
+  Theme,
   Replacement,
   Apperance,
-  DayOfWeek,
 };

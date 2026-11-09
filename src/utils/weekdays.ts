@@ -1,4 +1,4 @@
-import { DAYSOFWEEK, DayOfWeek } from "./../data";
+import { DAYSOFWEEK, WORKDAYS, DayOfWeek, Workday } from "./../data";
 
 function getDayName(day: Date): DayOfWeek {
     const DAY_MAP: Record<number, DayOfWeek> = {
@@ -13,13 +13,13 @@ function getDayName(day: Date): DayOfWeek {
     return DAY_MAP[day.getDay()];
 }
 
-function getWorkdayName(day: Date | number): DayOfWeek {
-    const DAY_MAP: Record<number, DayOfWeek> = {
-        0: DAYSOFWEEK.monday,
-        1: DAYSOFWEEK.tuesday,
-        2: DAYSOFWEEK.wednesday,
-        3: DAYSOFWEEK.thursday,
-        4: DAYSOFWEEK.friday,
+function getWorkdayName(day: Date | number): Workday {
+    const DAY_MAP: Record<number, Workday> = {
+        1: WORKDAYS.monday,
+        2: WORKDAYS.tuesday,
+        3: WORKDAYS.wednesday,
+        4: WORKDAYS.thursday,
+        5: WORKDAYS.friday,
     };
 
     if (day instanceof Date) {

@@ -26,6 +26,16 @@
   --clr-4: #ffddd2;
   --clr-5: #e29578;
   --br-std: 1px solid black;
+
+  color-scheme: light dark;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 * {
@@ -39,10 +49,8 @@
 }
 
 .rotated {
-  text-align: center;
-  position: absolute;
-  transform-origin: 0 0;
-  transform: rotate(-90deg);
+  writing-mode: sideways-lr;
+  align-items: center;
 }
 
 .settings-item {
@@ -189,18 +197,27 @@ a.disabled {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --clr-1: #d8dbe2;
     --clr-2: #a9bcd0;
     --clr-3: #2e3162;
     --clr-4: #58a4b0;
-    --clr-5: #262A65;
+    --clr-5: #262a65;
     --bs-heading-color: #e1e4ff !important;
     --bs-body-color: #e1e4ff !important;
     --bs-secondary-color: #bfc5ff !important;
-  }
 
-  .table {
-    --bs-table-color: #e1e4ff !important;
+    & .table {
+      --bs-table-color: #e1e4ff !important;
+    }
+
+    & .popover {
+      --bs-popover-bg: var(--clr-5) !important;
+      --bs-popover-border-color: var(var(--clr-3)) !important;
+    }
+
+    & .modal {
+      --bs-modal-bg: var(--clr-3) !important;
+    }
   }
 }

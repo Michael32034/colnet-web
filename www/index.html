@@ -44,195 +44,10 @@
 <body class="bg-clr-3">
     <main id="app">
         <article id="settings" class="page">
-            <nav class="nav justify-content-between align-items-center bg-secondary-subtle p-2 bg-clr-5">
-                <h3 class="mb-0 ms-3">Загальні налаштування</h3>
-                <button id="settings_form_submit" type="submit" form="settings_form" class="btn btn-outline-success"
-                    disabled>
-                    Зберегти
-                </button>
-            </nav>
-            <form id="settings_form" class="m-4">
-                <!-- <ul class="list-unstyled"> -->
-                <!--     <li> -->
-                <!--         <div class="form-switch"> -->
-                <!--             <input id="dark_theme" type="checkbox" role="switch" name="dark_theme" -->
-                <!--                 class="form-check-input settings" /> -->
-                <!--             <label for="dark_theme">Темна тема</label> -->
-                <!--         </div> -->
-                <!--     </li> -->
-                <!--     <li></li> -->
-                <!-- </ul> -->
-                <h4>Налаштування вмісту</h4>
-                <ul id="settings_subject_link" class="list-unstyled"></ul>
-            </form>
         </article>
         <article id="schedule" class="page">
-            <div class="w-100">
-                <table id="schedule_table" class="table table-bordered mx-auto w-75 mt-5 mb-5">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">КТ-25С</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="position-relative">
-                                <span class="rotated top-50">Понеділок</span>
-                            </th>
-                            <td>
-                                <table class="table bd-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Фізичне виховання</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Основи метрології</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="position-relative">
-                                <span class="rotated top-50">Вівторок</span>
-                            </th>
-                            <td>
-                                <table class="table bd-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Фізичне виховання</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Основи метрології</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="position-relative">
-                                <span class="rotated top-50">Середа</span>
-                            </th>
-                            <td>
-                                <table class="table bd-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Фізичне виховання</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Основи метрології</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="position-relative">
-                                <span class="rotated top-50">Четвер</span>
-                            </th>
-                            <td>
-                                <table class="table bd-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Фізичне виховання</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Основи метрології</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="position-relative">
-                                <span class="rotated top-50">П'ятниця</span>
-                            </th>
-                            <td>
-                                <table class="table bd-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Фізичне виховання</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Основи метрології</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td>-----</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </article>
         <article id="home" class="page">
-            <h1 class="text-center">Home</h1>
-            <div class="card m-2 card-bg-clr-4">
-                <div class="card-body d-inline-flex justify-content-between card-bg-clr-4">
-                    <span id="date" class="text-1">12.01</span>
-                    <span id="dayofweek" class="text-1">Четверг</span>
-                </div>
-            </div>
-            <div id="next_lesson" class="card m-2 card-bg-clr-4">
-                <div class="card-body">
-                    <h5 id="next_lesson_title" class="card-title placeholder-glow">
-                        Наступна пара: <span class="placeholder col-4"></span>
-                    </h5>
-                    <h6 id="next_lesson_start" class="card-subtitle mb-2 text-body-secondary text-1">
-                        Початок: <span class="placeholder col-1"></span>
-                    </h6>
-                    <!-- <p id="next_lesson_message" style="display: none"></p> -->
-                    <a id="next_lesson_link" href="#" class="card-link text-1 disabled">Посилання на урок</a>
-                    <a href="https://htcolledge.sumdu.edu.ua/dystantsiyne-navchannia/" class="card-link text-1">
-                        Офіційний сайт
-                    </a>
-                </div>
-            </div>
         </article>
         <article id="replacements" class="page"></article>
         <article id="news" class="page">
@@ -267,6 +82,24 @@
                 </form>
             </div>
         </dialog>
+        <div class="modal fade" id="removeAllData" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Очистити всі данні</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Після очищення данні буде неможливо відновити
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                        <button id="cleanData" type="button" class="btn btn-danger">Очистити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <nav id="navbar">
         <ul class="list-unstyled m-2">
