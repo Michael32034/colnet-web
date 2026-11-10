@@ -68,7 +68,7 @@ async function initSettingsPage() {
         <h4>
           Налаштування вмісту
         </h4>
-        <img src="/icons/info-circle-fill.svg" alt="" width="24" height="24"/>
+        <img src="./icons/info-circle-fill.svg" alt="" width="24" height="24"/>
       </div>
       <ul id="settings_subject_link" class="list-unstyled">
         ${settings.group.subjects.map(
