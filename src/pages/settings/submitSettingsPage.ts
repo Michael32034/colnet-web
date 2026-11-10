@@ -8,7 +8,7 @@ async function submitSettingsPage(e: SubmitEvent) {
 
     // Відключити кнопку
     let settingsFormSubmit = document.getElementById(
-        "settingsFormSubmit",
+        "settings_form_submit",
     ) as HTMLButtonElement;
     settingsFormSubmit.classList.add("btn-outline-success");
     settingsFormSubmit.classList.remove("btn-success");

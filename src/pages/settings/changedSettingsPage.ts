@@ -1,6 +1,6 @@
 async function changedSettingsPage() {
     let settingsFormSubmit = document.getElementById(
-        "settingsFormSubmit",
+        "settings_form_submit",
     ) as HTMLButtonElement;
     settingsFormSubmit.classList.add("btn-success");
     settingsFormSubmit.classList.remove("btn-outline-success");
