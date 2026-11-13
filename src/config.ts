@@ -5,6 +5,7 @@ const config = {
   STORAGE_ITEMS: {
     OpenedPage: "openedPage",
     Settings: "settings",
+    APICache: "apicache",
   },
   PAGES: defineEnum({
     settings: "#settings",
