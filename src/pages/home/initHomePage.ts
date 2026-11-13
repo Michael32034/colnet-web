@@ -26,7 +26,7 @@ async function initHomePage() {
     let schedule = await Api.getGroupScheduleByName(settings.group.name);
 
     let today = new Date();
-    // let today = new Date("Fri Nov 06 2026 11:03:40 GMT+0200");
+    // let today = new Date("Fri Nov 13 2026 12:03:40 GMT+0200");
     let todayMonth = (today.getMonth() + 1).toString();
     let todayMonthDay = today.getDate().toString();
     let todayDayOfWeek = getDayName(today);
@@ -72,22 +72,24 @@ async function initHomePage() {
             callSchedule,
             schedule,
         );
-        if (nextLessonNumber != -1) {
-            let nextLesson: string =
-                schedule[todayDayOfWeek as Workday][nextLessonNumber - 1];
-            let nextLessonStart: string = callSchedule[nextLessonNumber - 1].start;
-            let nextLessonLink = (
-                await Api.getGroupByName(settings.subject_links[nextLesson])
-            ).link;
-            lessonMessage.push(
-                html`<${LessonComponent}
+        if (nextLessonNumber != -1 || currentLessonNumber != -1) {
+            if (nextLessonNumber !== -1) {
+                let nextLesson: string =
+                    schedule[todayDayOfWeek as Workday][nextLessonNumber - 1];
+                let nextLessonStart: string = callSchedule[nextLessonNumber - 1].start;
+                let nextLessonLink = (
+                    await Api.getGroupByName(settings.subject_links[nextLesson])
+                ).link;
+                lessonMessage.push(
+                    html`<${LessonComponent}
                     lesson=${nextLesson}
                     lessonDesc=${"Наступна пара"}
                     lessonLink=${nextLessonLink}
                     lessonStart=${nextLessonStart}
                     isLinkDisabled=${false}
                 />`,
-            );
+                );
+            }
             if (currentLessonNumber !== -1) {
                 let currentLesson: string =
                     schedule[todayDayOfWeek as Workday][currentLessonNumber - 1];
